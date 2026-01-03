@@ -10,9 +10,11 @@ layout: default
                 <span class="gradient-text">Hello, I'm</span><br>
                 {{ site.author }}
             </h1>
-            <p class="hero-subtitle">Developer & Creative Thinker</p>
+            <p class="hero-subtitle">Theoretical Computer Scientist & Systems Programmer</p>
             <p class="hero-description">
-                I build beautiful, functional web experiences and share my journey through code.
+                Exploring the mathematical foundations of computation, algorithm design,
+                and low-level systems programming. Passionate about discrete mathematics,
+                complexity theory, and building efficient systems.
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -22,11 +24,12 @@ layout: default
         <div class="hero-image">
             <div class="floating-card">
                 <div class="code-snippet">
-                    <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">developer</span> = {</div>
-                    <div class="code-line indent">name: <span class="code-string">'{{ site.author }}'</span>,</div>
-                    <div class="code-line indent">passion: <span class="code-string">'Creating amazing things'</span>,</div>
-                    <div class="code-line indent">status: <span class="code-string">'Always learning'</span></div>
-                    <div class="code-line">};</div>
+                    <div class="code-line"><span class="code-keyword">def</span> <span class="code-var">complexity</span>(n):</div>
+                    <div class="code-line indent"><span class="code-keyword">if</span> n == <span class="code-string">0</span>:</div>
+                    <div class="code-line indent indent"><span class="code-keyword">return</span> <span class="code-string">O(1)</span></div>
+                    <div class="code-line indent"><span class="code-keyword">return</span> <span class="code-var">log</span>(n) + <span class="code-var">complexity</span>(n/<span class="code-string">2</span>)</div>
+                    <div class="code-line"></div>
+                    <div class="code-line"><span class="code-comment">// T(n) = O(log n)</span></div>
                 </div>
             </div>
         </div>
@@ -40,25 +43,29 @@ layout: default
         <div class="about-content">
             <div class="about-text">
                 <p>
-                    Welcome to my portfolio! I'm a passionate developer who loves creating
-                    digital experiences that make a difference. With a focus on clean code,
-                    user experience, and continuous learning, I bring ideas to life.
+                    I'm deeply fascinated by the theoretical foundations of computer science and
+                    the mathematical structures that underpin computation. My research interests
+                    span discrete mathematics, algorithm analysis, computational complexity, and
+                    the design of efficient systems.
                 </p>
                 <p>
-                    When I'm not coding, you'll find me exploring new technologies,
-                    contributing to open source, or sharing my knowledge through blog posts.
+                    When I'm not diving into complexity proofs or optimizing algorithms, I work
+                    on systems programming projects, exploring low-level abstractions, and
+                    contributing to open-source tools that bridge theory and practice.
                 </p>
                 <div class="skills">
-                    <h3>Skills & Technologies</h3>
+                    <h3>Areas of Interest & Expertise</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Discrete Math</span>
+                        <span class="skill-tag">Complexity Theory</span>
+                        <span class="skill-tag">Algorithms</span>
+                        <span class="skill-tag">Systems Programming</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">Rust</span>
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Web Design</span>
-                        <span class="skill-tag">UI/UX</span>
+                        <span class="skill-tag">Graph Theory</span>
+                        <span class="skill-tag">Data Structures</span>
+                        <span class="skill-tag">Compiler Design</span>
                     </div>
                 </div>
             </div>

@@ -34,6 +34,7 @@ layout: default
 .post-page {
     padding: 8rem 0 4rem;
     min-height: 100vh;
+    background: var(--bg-primary);
 }
 
 .post-header {
@@ -79,12 +80,14 @@ layout: default
 }
 
 .tag {
-    background: var(--bg-secondary);
+    background: var(--bg-tertiary);
     color: var(--primary-color);
     padding: 0.25rem 0.75rem;
     border-radius: 0.25rem;
+    border: 1px solid var(--border-color);
     font-size: 0.875rem;
     font-weight: 500;
+    font-family: 'SF Mono', 'Monaco', monospace;
 }
 
 .post-content {
@@ -114,20 +117,24 @@ layout: default
 }
 
 .post-content code {
-    background: var(--bg-secondary);
+    background: var(--code-bg);
+    color: var(--code-text);
     padding: 0.2rem 0.4rem;
     border-radius: 0.25rem;
-    font-family: 'Courier New', monospace;
+    border: 1px solid var(--border-color);
+    font-family: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
     font-size: 0.9em;
 }
 
 .post-content pre {
-    background: var(--bg-dark);
-    color: white;
+    background: var(--code-bg);
+    color: var(--code-text);
     padding: 1.5rem;
     border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
     overflow-x: auto;
     margin: 1.5rem 0;
+    box-shadow: var(--shadow-md);
 }
 
 .post-content pre code {
