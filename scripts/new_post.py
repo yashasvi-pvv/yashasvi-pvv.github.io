@@ -64,7 +64,8 @@ def create_post(title, date=None, tags=None, author=None, excerpt=None):
             tags_list = [tag.strip() for tag in tags.split(',')]
         else:
             tags_list = tags
-        front_matter.append(f'tags: [{", ".join(f\'"{tag}"\' for tag in tags_list)}]')
+        tags_str = ", ".join(f'"{tag}"' for tag in tags_list)
+        front_matter.append(f'tags: [{tags_str}]')
 
     if excerpt:
         front_matter.append(f'excerpt: "{excerpt}"')
@@ -79,8 +80,8 @@ def create_post(title, date=None, tags=None, author=None, excerpt=None):
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write('\n'.join(front_matter))
 
-        click.echo(f"✅ Created new blog post: {filepath}")
-        click.echo(f"📝 Edit the file to add your content.")
+        click.echo(f"[OK] Created new blog post: {filepath}")
+        click.echo(f"[INFO] Edit the file to add your content.")
         return filepath
     except Exception as e:
         click.echo(f"Error creating file: {e}", err=True)
