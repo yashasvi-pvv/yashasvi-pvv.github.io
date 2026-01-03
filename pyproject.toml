@@ -1,0 +1,13 @@
+[project]
+name = "portfolio-blog-manager"
+version = "0.1.0"
+description = "Blog post management tool for Jekyll portfolio"
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.0.0",
+    "python-dateutil>=2.8.0",
+]
+
+[project.scripts]
+new-post = "scripts.new_post:main"
+
