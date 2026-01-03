@@ -260,10 +260,12 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     height: 100%;
     overflow: hidden;
-    opacity: 0.15;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .binary-line {
@@ -274,7 +276,8 @@ body {
     white-space: nowrap;
     animation: binaryFlow 15s linear infinite;
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-    will-change: transform, opacity; /* Hint to browser for GPU optimization */
+    will-change: transform, opacity;
+    left: 0;
 }
 
 @keyframes binaryFlow {
@@ -282,11 +285,11 @@ body {
         transform: translateX(-100%);
         opacity: 0;
     }
-    10% {
-        opacity: 1;
+    5% {
+        opacity: 0.8;
     }
-    90% {
-        opacity: 1;
+    95% {
+        opacity: 0.8;
     }
     100% {
         transform: translateX(100vw);
@@ -295,23 +298,27 @@ body {
 }
 
 .binary-line:nth-child(1) {
-    top: 10%;
+    top: 15%;
     animation-duration: 20s;
+    animation-delay: 0s;
 }
 
 .binary-line:nth-child(2) {
-    top: 30%;
+    top: 35%;
     animation-duration: 18s;
+    animation-delay: 2s;
 }
 
 .binary-line:nth-child(3) {
-    top: 50%;
+    top: 55%;
     animation-duration: 22s;
+    animation-delay: 4s;
 }
 
 .binary-line:nth-child(4) {
-    top: 70%;
+    top: 75%;
     animation-duration: 16s;
+    animation-delay: 6s;
 }
 
 /* Matrix Grid */
@@ -336,6 +343,81 @@ body {
     100% {
         transform: translate(50px, 50px);
     }
+}
+
+/* Floating Graph Data Structure */
+.floating-graph {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+    animation: graphFloat 25s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes graphFloat {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(30px, -20px) rotate(2deg);
+    }
+    50% {
+        transform: translate(-20px, 30px) rotate(-2deg);
+    }
+    75% {
+        transform: translate(20px, 20px) rotate(1deg);
+    }
+}
+
+.graph-edge {
+    stroke: url(#edgeGrad);
+    stroke-width: 1.5;
+    stroke-opacity: 0.4;
+    animation: edgePulse 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.3));
+}
+
+@keyframes edgePulse {
+    0%, 100% {
+        stroke-opacity: 0.3;
+        stroke-width: 1.5;
+    }
+    50% {
+        stroke-opacity: 0.6;
+        stroke-width: 2;
+    }
+}
+
+.graph-node {
+    fill: var(--primary-color);
+    opacity: 0.6;
+    animation: nodeFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.5));
+    will-change: transform, opacity;
+}
+
+@keyframes nodeFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(5px, -5px) scale(1.2);
+        opacity: 0.9;
+    }
+}
+
+/* Staggered node animations for wave effect */
+.graph-node:nth-child(odd) {
+    animation-duration: 3s;
+}
+
+.graph-node:nth-child(even) {
+    animation-duration: 3.5s;
+    animation-direction: reverse;
 }
 
 /* Ensure content is above animations */
